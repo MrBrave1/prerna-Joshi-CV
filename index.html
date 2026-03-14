@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Prerna Joshi — Compliance & HR Professional</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --teal:#0d6e6e;--teal-lt:#e6f4f4;--teal-md:#1a9090;
+  --gold:#c9a84c;--gold-lt:#fdf7ec;
+  --ink:#111827;--body:#374151;--muted:#6b7280;
+  --rule:#e5e7eb;--bg:#f8fafb;--white:#ffffff;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased}
+
+.page{max-width:960px;margin:40px auto;background:var(--white);box-shadow:0 4px 6px rgba(0,0,0,.04),0 20px 60px rgba(0,0,0,.10);opacity:0;transform:translateY(24px);animation:rise .65s cubic-bezier(.22,1,.36,1) forwards .1s}
+@keyframes rise{to{opacity:1;transform:translateY(0)}}
+
+/* HEADER */
+header{display:grid;grid-template-columns:1fr auto;align-items:end;gap:24px;padding:52px 60px 40px;border-bottom:3px solid var(--teal);position:relative;overflow:hidden}
+header::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--teal),var(--teal-md),var(--gold))}
+header::after{content:'';position:absolute;top:-80px;right:-80px;width:300px;height:300px;border-radius:50%;background:var(--teal-lt);z-index:0}
+.hl{position:relative;z-index:1}
+.hr{position:relative;z-index:1;text-align:right}
+.pre-name{font-size:.68rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);margin-bottom:10px;opacity:0;animation:fi .5s ease forwards .4s}
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,5vw,4rem);font-weight:700;color:var(--ink);line-height:1;letter-spacing:-.02em;opacity:0;animation:fi .5s ease forwards .55s}
+.name-em{color:var(--teal)}
+.title-line{margin-top:12px;font-size:.88rem;font-weight:500;color:var(--muted);letter-spacing:.03em;opacity:0;animation:fi .5s ease forwards .7s}
+.title-line span{display:inline-block;margin:0 8px;color:var(--rule)}
+.contact-stack{display:flex;flex-direction:column;gap:8px;opacity:0;animation:fi .5s ease forwards .85s}
+.c-item{display:flex;align-items:center;justify-content:flex-end;gap:8px;font-size:.78rem;color:var(--body)}
+.c-item svg{width:13px;height:13px;fill:var(--teal);flex-shrink:0}
+
+/* PROJECT BANNER */
+.project-banner{background:var(--gold);padding:13px 60px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;opacity:0;animation:fi .5s ease forwards .9s}
+.pb-label{font-size:.6rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(0,0,0,.45);white-space:nowrap}
+.pb-sep{width:1px;height:22px;background:rgba(0,0,0,.18);flex-shrink:0}
+.pb-items{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+.pb-item{font-size:.77rem;font-weight:600;color:var(--ink);display:flex;align-items:center;gap:5px}
+.pb-item svg{width:11px;height:11px;fill:rgba(0,0,0,.38)}
+
+/* SUMMARY */
+.summary{background:var(--teal);color:#fff;padding:26px 60px;font-size:.87rem;line-height:1.85;font-weight:300;opacity:0;animation:fi .5s ease forwards 1s}
+.summary strong{font-weight:600;color:#a8e6e6}
+
+/* BODY */
+.body{display:grid;grid-template-columns:1fr 265px}
+.main{padding:44px 48px 44px 60px;border-right:1px solid var(--rule)}
+.sidebar{padding:44px 36px;background:var(--bg)}
+
+.section{margin-bottom:36px}
+.section:last-child{margin-bottom:0}
+.sec-head{display:flex;align-items:center;gap:12px;margin-bottom:22px}
+.sec-icon{width:30px;height:30px;background:var(--teal);border-radius:6px;display:grid;place-items:center;flex-shrink:0}
+.sec-icon svg{width:14px;height:14px;fill:#fff}
+.sec-title{font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--ink)}
+.sec-title::after{content:'';display:block;width:100%;height:1px;background:var(--rule);margin-top:4px}
+
+/* EXPERIENCE */
+.exp{margin-bottom:28px;position:relative;padding-left:18px}
+.exp::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;background:var(--teal);border-radius:50%}
+.exp::after{content:'';position:absolute;left:2.5px;top:18px;width:1px;height:calc(100% + 8px);background:var(--rule)}
+.exp:last-child::after{display:none}
+.exp-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+.exp-role{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:700;color:var(--ink);line-height:1.2}
+.exp-badge{font-size:.68rem;font-weight:600;padding:3px 10px;border-radius:20px;background:var(--teal-lt);color:var(--teal);white-space:nowrap;letter-spacing:.04em;flex-shrink:0}
+.exp-badge.current{background:var(--teal);color:#fff}
+.exp-company{font-size:.8rem;color:var(--muted);margin-top:3px;font-weight:500}
+
+/* PROJECT META */
+.project-meta{margin-top:10px;display:flex;flex-wrap:wrap;gap:7px}
+.pm-tag{font-size:.69rem;font-weight:600;padding:4px 11px;border-radius:4px;background:var(--gold-lt);border:1px solid #e8d5a0;color:#7a5c10;display:flex;align-items:center;gap:5px}
+.pm-tag svg{width:10px;height:10px;fill:#c9a84c;flex-shrink:0}
+
+.exp-bullets{margin-top:10px;list-style:none}
+.exp-bullets li{font-size:.8rem;color:var(--body);line-height:1.65;padding-left:14px;position:relative;margin-bottom:5px}
+.exp-bullets li::before{content:'▸';position:absolute;left:0;color:var(--teal-md);font-size:.65rem;top:2px}
+
+/* EDUCATION */
+.edu{display:flex;gap:16px;margin-bottom:18px;padding-bottom:18px;border-bottom:1px solid var(--rule)}
+.edu:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.edu-year{min-width:44px;font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:700;color:var(--gold);text-align:center;line-height:1.2}
+.edu-degree{font-size:.88rem;font-weight:600;color:var(--ink)}
+.edu-school{font-size:.76rem;color:var(--muted);margin-top:2px}
+
+/* SIDEBAR */
+.bar-skill{margin-bottom:14px}
+.bar-top{display:flex;justify-content:space-between;font-size:.74rem;font-weight:500;margin-bottom:5px}
+.bar-pct{color:var(--teal);font-weight:600}
+.bar-track{height:5px;background:var(--rule);border-radius:8px;overflow:hidden}
+.bar-fill{height:100%;background:linear-gradient(90deg,var(--teal),var(--teal-md));border-radius:8px;width:0;transition:width 1.1s cubic-bezier(.22,1,.36,1)}
+
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:4px}
+.chip{font-size:.71rem;font-weight:500;padding:5px 11px;border-radius:4px;border:1.5px solid var(--rule);color:var(--body);background:var(--white);transition:all .2s;cursor:default}
+.chip:hover{background:var(--teal);border-color:var(--teal);color:#fff}
+
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:28px}
+.stat{background:var(--teal-lt);border-radius:8px;padding:14px 12px;text-align:center}
+.stat.g{background:var(--gold-lt);border:1px solid #e8d5a0}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:1.65rem;font-weight:700;color:var(--teal);line-height:1}
+.g .stat-num{color:var(--gold)}
+.stat-lbl{font-size:.61rem;font-weight:600;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-top:4px}
+
+.pd-item{display:flex;gap:8px;font-size:.77rem;padding:8px 0;border-bottom:1px solid var(--rule);align-items:flex-start}
+.pd-item:last-child{border-bottom:none}
+.pd-lbl{color:var(--muted);font-weight:500;width:92px;flex-shrink:0}
+.pd-val{color:var(--ink);font-weight:500}
+
+.str-item{font-size:.77rem;color:var(--body);padding:7px 0 7px 16px;position:relative;border-bottom:1px solid var(--rule);line-height:1.5}
+.str-item:last-child{border-bottom:none}
+.str-item::before{content:'✦';position:absolute;left:0;color:var(--gold);font-size:.58rem;top:10px}
+
+.decl{margin-top:32px;padding:16px 20px;border-left:3px solid var(--teal);background:var(--teal-lt);font-size:.75rem;color:var(--muted);line-height:1.7;font-style:italic;border-radius:0 6px 6px 0}
+.s-label{font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);padding-bottom:8px;border-bottom:2px solid var(--teal-lt);margin-bottom:16px}
+
+@keyframes fi{to{opacity:1}}
+.reveal{opacity:0;transform:translateY(16px)}
+.reveal.in{animation:revIn .5s ease forwards}
+@keyframes revIn{to{opacity:1;transform:translateY(0)}}
+
+@media(max-width:720px){
+  header{grid-template-columns:1fr;gap:20px;padding:36px 28px 32px}
+  .hr{text-align:left}
+  .c-item{justify-content:flex-start}
+  .summary,.project-banner{padding:22px 28px}
+  .body{grid-template-columns:1fr}
+  .main{padding:32px 28px;border-right:none;border-bottom:1px solid var(--rule)}
+  .sidebar{padding:32px 28px}
+}
+@media print{
+  body{background:#fff}
+  .page{margin:0;box-shadow:none;max-width:100%}
+  .reveal{opacity:1!important;transform:none!important}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HEADER -->
+<header>
+  <div class="hl">
+    <div class="pre-name">Labour Law Compliance &amp; Human Resources</div>
+    <h1>Prerna <span class="name-em">Joshi</span></h1>
+    <div class="title-line">Compliance Manager &amp; HR Professional<span>|</span>5+ Years Experience<span>|</span>New Delhi</div>
+  </div>
+  <div class="hr">
+    <div class="contact-stack">
+      <div class="c-item">
+        <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.15 15.15 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.47 11.47 0 003.58.57 1 1 0 011 1v3.5a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.58a1 1 0 01-.25 1.01z"/></svg>
+        +91 88002 13283
+      </div>
+      <div class="c-item">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5z"/></svg>
+        joshiprerna519@gmail.com
+      </div>
+      <div class="c-item">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1112 6a2.5 2.5 0 010 5z"/></svg>
+        Pul Pehlad Pur, New Delhi – 110044
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- CURRENT PROJECT BANNER -->
+<div class="project-banner">
+  <div class="pb-label">🏗 Current Project</div>
+  <div class="pb-sep"></div>
+  <div class="pb-items">
+    <div class="pb-item">
+      <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/></svg>
+      IKEA India — Gurugram
+    </div>
+    <div class="pb-sep"></div>
+    <div class="pb-item">
+      <svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+      Project Cost: ₹6,700 Crore
+    </div>
+    <div class="pb-sep"></div>
+    <div class="pb-item">
+      <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3z"/></svg>
+      Client: Mace &amp; IKEA India Pvt. Ltd.
+    </div>
+    <div class="pb-sep"></div>
+    <div class="pb-item">
+      <svg viewBox="0 0 24 24"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/></svg>
+      JN Lighting India LLP
+    </div>
+  </div>
+</div>
+
+<!-- SUMMARY -->
+<div class="summary">
+  Results-driven <strong>Compliance Manager &amp; HR professional with 5+ years</strong> of progressive experience spanning labour law compliance, talent acquisition, and HR operations across large-scale infrastructure, PMC, and international healthcare sectors. Currently managing statutory and labour law compliance for the prestigious <strong>IKEA India Gurugram project (₹6,700 Cr)</strong> for clients Mace &amp; IKEA India Private Limited. Possesses <strong>thorough, up-to-date knowledge of Indian Labour Laws</strong> — including the four new Labour Codes — all statutory returns, filing deadlines, code of conduct obligations under applicable acts, and extensive hands-on experience operating all major <strong>government compliance portals</strong> including EPFO, ESIC, Shram Suvidha &amp; BOCW. Seeking a senior compliance or HR leadership role in a high-impact MNC.
+</div>
+
+<!-- BODY -->
+<div class="body">
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <section class="section reveal">
+      <div class="sec-head">
+        <div class="sec-icon"><svg viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2zm-9 9H7v-2h4v2zm6 0h-4v-2h4v2zm0-4H7v-2h10v2zM16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></div>
+        <div class="sec-title">Professional Experience</div>
+      </div>
+
+      <!-- JN Lighting / IKEA -->
+      <div class="exp">
+        <div class="exp-head">
+          <div>
+            <div class="exp-role">Compliance Manager</div>
+            <div class="exp-company">JN Lighting India LLP</div>
+          </div>
+          <span class="exp-badge current">Jan 2026 – Present</span>
+        </div>
+        <div class="project-meta">
+          <span class="pm-tag"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/></svg>IKEA India, Gurugram</span>
+          <span class="pm-tag"><svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>Project Cost: ₹6,700 Cr</span>
+          <span class="pm-tag"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3z"/></svg>Client: Mace &amp; IKEA India Pvt. Ltd.</span>
+        </div>
+        <ul class="exp-bullets" style="margin-top:12px">
+          <li>Overseeing end-to-end statutory and labour law compliance for one of India's largest ongoing retail infrastructure projects — IKEA India, Gurugram (₹6,700 Cr) — for principal clients Mace and IKEA India Private Limited.</li>
+          <li>Ensuring full compliance under the <strong>Contract Labour (R&amp;A) Act, 1970; BOCW Act, 1996; EPF &amp; MP Act; ESI Act;</strong> and all other applicable labour legislation covering the complete contractor and sub-contractor workforce.</li>
+          <li>Filing all <strong>statutory returns and filings</strong> — monthly ECR on EPFO Unified Portal, ESIC IP returns, BOCW cess deposits, Form II, Form V, and all registers under CLRA — ensuring zero-penalty compliance at all times.</li>
+          <li>Well-versed in operating all key <strong>government portals</strong>: EPFO Unified Portal, ESIC IP Portal, Shram Suvidha, BOCW Portal, Umang App, and state-level Labour Department portals.</li>
+          <li>Enforcing workplace <strong>Code of Conduct</strong> for all workers and staff as per company policy and statutory requirements, including POSH Act compliance, grievance redressal, and on-site safety standards.</li>
+          <li>Maintaining thorough, current knowledge of all four <strong>new Labour Codes</strong> (Wages 2019, Industrial Relations 2020, Social Security 2020, OSH 2020) and advising management on transition and implementation.</li>
+          <li>Conducting periodic <strong>compliance audits</strong> of sub-contractors and vendors; preparing compliance dashboards and reports for review by Mace and IKEA India senior leadership.</li>
+          <li>Liaising directly with <strong>government authorities</strong> — Labour Department, EPFO, ESIC offices — for inspections, notices, document submissions, and clearances.</li>
+        </ul>
+      </div>
+
+      <!-- DFS HR -->
+      <div class="exp">
+        <div class="exp-head">
+          <div>
+            <div class="exp-role">Sr. Executive – HR &amp; Admin</div>
+            <div class="exp-company">DFS HR Associates Pvt. Ltd.</div>
+          </div>
+          <span class="exp-badge">Sep 2025 – Jan 2026</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Led end-to-end recruitment coordinating with vendors and department heads, ensuring timely closure of all open positions.</li>
+          <li>Managed complete employee lifecycle — onboarding, induction, exit interviews, and Full &amp; Final (F&amp;F) settlements.</li>
+          <li>Prepared and maintained monthly attendance records and salary sheets; handled statutory compliances: PF, ESIC, Gratuity, and Bonus.</li>
+          <li>Generated and maintained UAN &amp; ESIC registrations; resolved employee grievances with proper documentation and timely action.</li>
+        </ul>
+      </div>
+
+      <!-- MOLETHU -->
+      <div class="exp">
+        <div class="exp-head">
+          <div>
+            <div class="exp-role">HR &amp; Admin Executive</div>
+            <div class="exp-company">MOLETHU PMC Pvt. Ltd.</div>
+          </div>
+          <span class="exp-badge">Feb 2024 – Sep 2025</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Managed full recruitment lifecycle — sourcing on LinkedIn, Naukri &amp; Indeed through to onboarding and induction sessions.</li>
+          <li>Tracked attendance, processed payroll in coordination with accounts; handled office administration and daily operations.</li>
+          <li>Client invoicing, payment follow-ups, exit interviews, and F&amp;F settlements.</li>
+        </ul>
+      </div>
+
+      <!-- First Connect -->
+      <div class="exp">
+        <div class="exp-head">
+          <div>
+            <div class="exp-role">Associate – US Healthcare Recruiter</div>
+            <div class="exp-company">First Connect Health (US-Based Agency)</div>
+          </div>
+          <span class="exp-badge">Oct 2023 – Jan 2024</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Conducted end-to-end recruitment for clinical and non-clinical US healthcare roles; sourced candidates, negotiated compensation, and ensured full hiring compliance.</li>
+        </ul>
+      </div>
+
+      <!-- Talent Advisors -->
+      <div class="exp">
+        <div class="exp-head">
+          <div>
+            <div class="exp-role">Sourcing Specialist</div>
+            <div class="exp-company">Talent Advisors</div>
+          </div>
+          <span class="exp-badge">Jan 2021 – Jul 2023</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Recruited across top MNCs — <strong>American Express, Barclays, Telus International, WNS &amp; British Airways</strong>.</li>
+          <li>Screened resumes, conducted salary negotiations, and maintained Excel-based MIS reports and candidate databases.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section reveal">
+      <div class="sec-head">
+        <div class="sec-icon"><svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg></div>
+        <div class="sec-title">Education</div>
+      </div>
+      <div class="edu">
+        <div class="edu-year">2019+</div>
+        <div>
+          <div class="edu-degree">Bachelor of Commerce (B.Com)</div>
+          <div class="edu-school">Delhi University — Aryabhatta College</div>
+        </div>
+      </div>
+      <div class="edu">
+        <div class="edu-year">2019</div>
+        <div>
+          <div class="edu-degree">Senior Secondary (Class XII) — CBSE</div>
+          <div class="edu-school">St. Giri Public School, New Delhi</div>
+        </div>
+      </div>
+      <div class="edu">
+        <div class="edu-year">—</div>
+        <div>
+          <div class="edu-degree">High School (Class X) — CBSE</div>
+          <div class="edu-school">St. Giri Public School, New Delhi</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="decl">
+      I hereby declare that all information provided above is true and correct to the best of my knowledge and belief.
+      <br/><br/>— <strong>Prerna Joshi</strong>, New Delhi
+    </div>
+
+  </main>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="stats reveal">
+      <div class="stat"><div class="stat-num">5+</div><div class="stat-lbl">Years Exp.</div></div>
+      <div class="stat g"><div class="stat-num">₹6.7K</div><div class="stat-lbl">Cr Project</div></div>
+      <div class="stat g"><div class="stat-num">IKEA</div><div class="stat-lbl">Client</div></div>
+      <div class="stat"><div class="stat-num">MNC</div><div class="stat-lbl">Exposure</div></div>
+    </div>
+
+    <section class="section reveal">
+      <div class="s-label">Core Competencies</div>
+      <div class="bar-skill"><div class="bar-top"><span>Indian Labour Laws</span><span class="bar-pct">97%</span></div><div class="bar-track"><div class="bar-fill" data-w="97"></div></div></div>
+      <div class="bar-skill"><div class="bar-top"><span>Statutory Returns &amp; Filings</span><span class="bar-pct">96%</span></div><div class="bar-track"><div class="bar-fill" data-w="96"></div></div></div>
+      <div class="bar-skill"><div class="bar-top"><span>Govt. Portal Operations</span><span class="bar-pct">94%</span></div><div class="bar-track"><div class="bar-fill" data-w="94"></div></div></div>
+      <div class="bar-skill"><div class="bar-top"><span>Compliance Audits</span><span class="bar-pct">92%</span></div><div class="bar-track"><div class="bar-fill" data-w="92"></div></div></div>
+      <div class="bar-skill"><div class="bar-top"><span>End-to-End Recruitment</span><span class="bar-pct">90%</span></div><div class="bar-track"><div class="bar-fill" data-w="90"></div></div></div>
+      <div class="bar-skill"><div class="bar-top"><span>Payroll &amp; HR Operations</span><span class="bar-pct">88%</span></div><div class="bar-track"><div class="bar-fill" data-w="88"></div></div></div>
+    </section>
+
+    <section class="section reveal">
+      <div class="s-label">Indian Labour Law Expertise</div>
+      <div class="str-item">Code on Wages, 2019</div>
+      <div class="str-item">Code on Industrial Relations, 2020</div>
+      <div class="str-item">Code on Social Security, 2020</div>
+      <div class="str-item">Code on OSH &amp; Working Conditions, 2020</div>
+      <div class="str-item">Contract Labour (R&amp;A) Act, 1970</div>
+      <div class="str-item">BOCW Act, 1996 &amp; BOCW Cess Act</div>
+      <div class="str-item">EPF &amp; MP Act · ESI Act</div>
+      <div class="str-item">Payment of Bonus &amp; Gratuity Acts</div>
+      <div class="str-item">Minimum Wages Act · Factories Act</div>
+      <div class="str-item">Maternity Benefit Act · POSH Act</div>
+    </section>
+
+    <section class="section reveal">
+      <div class="s-label">Govt. Portals &amp; Tools</div>
+      <div class="chips">
+        <span class="chip">EPFO Unified Portal</span>
+        <span class="chip">ESIC IP Portal</span>
+        <span class="chip">Shram Suvidha</span>
+        <span class="chip">BOCW Portal</span>
+        <span class="chip">Umang App</span>
+        <span class="chip">Labour Dept. Portal</span>
+        <span class="chip">MS Excel</span>
+        <span class="chip">HRMS</span>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="s-label">Key Skills</div>
+      <div class="chips">
+        <span class="chip">Statutory Compliance</span>
+        <span class="chip">All Statutory Returns</span>
+        <span class="chip">Code of Conduct</span>
+        <span class="chip">Compliance Audits</span>
+        <span class="chip">Talent Acquisition</span>
+        <span class="chip">Onboarding &amp; Exit</span>
+        <span class="chip">Grievance Handling</span>
+        <span class="chip">Payroll Processing</span>
+        <span class="chip">UAN &amp; ESIC Reg.</span>
+        <span class="chip">Client Coordination</span>
+        <span class="chip">LinkedIn</span>
+        <span class="chip">Naukri · Indeed</span>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="s-label">Personal Details</div>
+      <div class="pd-item"><span class="pd-lbl">Date of Birth</span><span class="pd-val">30 Nov 2001</span></div>
+      <div class="pd-item"><span class="pd-lbl">Father's Name</span><span class="pd-val">Ramesh Chandra Joshi</span></div>
+      <div class="pd-item"><span class="pd-lbl">Marital Status</span><span class="pd-val">Single</span></div>
+      <div class="pd-item"><span class="pd-lbl">Nationality</span><span class="pd-val">Indian</span></div>
+      <div class="pd-item"><span class="pd-lbl">Languages</span><span class="pd-val">English, Hindi</span></div>
+    </section>
+
+    <section class="section reveal">
+      <div class="s-label">Strengths &amp; Interests</div>
+      <div class="str-item">Hardworking &amp; Highly Punctual</div>
+      <div class="str-item">Strong Communication Skills</div>
+      <div class="str-item">Sketching &amp; Creative Arts</div>
+      <div class="str-item">Avid Reader</div>
+    </section>
+
+  </aside>
+</div>
+</div>
+
+<script>
+const fills = document.querySelectorAll('.bar-fill');
+const barObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting){e.target.style.width=e.target.dataset.w+'%';barObs.unobserve(e.target)}
+  });
+},{threshold:.3});
+fills.forEach(f=>barObs.observe(f));
+
+const reveals = document.querySelectorAll('.reveal');
+const revObs = new IntersectionObserver(entries => {
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){setTimeout(()=>e.target.classList.add('in'),i*80);revObs.unobserve(e.target)}
+  });
+},{threshold:.1});
+reveals.forEach(r=>revObs.observe(r));
+</script>
+</body>
+</html>
