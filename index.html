@@ -26,7 +26,7 @@ header::after{content:'';position:absolute;top:-80px;right:-80px;width:300px;hei
 .hl{position:relative;z-index:1}
 .hr{position:relative;z-index:1;text-align:right}
 .pre-name{font-size:.68rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);margin-bottom:10px;opacity:0;animation:fi .5s ease forwards .4s}
-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,5vw,4rem);font-weight:700;color:var(--ink);line-height:1;letter-spacing:-.02em;opacity:0;animation:fi .5s ease forwards .55s}
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,5vw,4rem);font-weight:700;color:var(--ink);line-height:1;letter-spacing:-.02em;opacity:0;animation:fi .5s ease forwards .55s}
 .name-em{color:var(--teal)}
 .title-line{margin-top:12px;font-size:.88rem;font-weight:500;color:var(--muted);letter-spacing:.03em;opacity:0;animation:fi .5s ease forwards .7s}
 .title-line span{display:inline-block;margin:0 8px;color:var(--rule)}
@@ -121,19 +121,108 @@ h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,5vw,4rem);font-
 .reveal.in{animation:revIn .5s ease forwards}
 @keyframes revIn{to{opacity:1;transform:translateY(0)}}
 
+/* =============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================= */
+
+/* Large tablets / small desktops */
+@media(max-width:900px){
+  header{padding:44px 36px 36px}
+  .summary,.project-banner{padding:22px 36px}
+  .body{grid-template-columns:1fr 240px}
+  .main{padding:36px 32px 36px 36px}
+  .sidebar{padding:36px 24px}
+}
+
+/* Tablets (portrait) */
 @media(max-width:720px){
-  header{grid-template-columns:1fr;gap:20px;padding:36px 28px 32px}
+  .page{margin:0;box-shadow:none;border-radius:0}
+
+  header{
+    grid-template-columns:1fr;
+    gap:24px;
+    padding:36px 24px 32px;
+  }
+  header::after{display:none}
   .hr{text-align:left}
   .c-item{justify-content:flex-start}
-  .summary,.project-banner{padding:22px 28px}
+
+  .project-banner{padding:14px 24px;gap:10px}
+  .pb-sep{display:none}
+  .pb-items{gap:12px}
+
+  .summary{padding:22px 24px}
+
   .body{grid-template-columns:1fr}
-  .main{padding:32px 28px;border-right:none;border-bottom:1px solid var(--rule)}
-  .sidebar{padding:32px 28px}
+  .main{
+    padding:32px 24px;
+    border-right:none;
+    border-bottom:1px solid var(--rule);
+  }
+  .sidebar{padding:32px 24px}
+
+  /* Stats grid stays 2-col on tablets */
+  .stats{grid-template-columns:1fr 1fr}
 }
+
+/* Large phones */
+@media(max-width:520px){
+  header{padding:28px 16px 24px}
+  h1{font-size:2.2rem}
+  .title-line{font-size:.78rem}
+  .title-line span{display:none}
+  .title-line{display:flex;flex-direction:column;gap:3px;line-height:1.5}
+
+  .project-banner{padding:12px 16px}
+  .pb-label{font-size:.56rem}
+  .pb-items{gap:10px;flex-direction:column;align-items:flex-start}
+  .pb-sep{display:none}
+
+  .summary{padding:18px 16px;font-size:.82rem}
+
+  .main{padding:24px 16px}
+  .sidebar{padding:24px 16px}
+
+  .exp-head{flex-direction:column;gap:6px}
+  .exp-badge{align-self:flex-start}
+
+  .stats{grid-template-columns:1fr 1fr;gap:8px}
+  .stat{padding:12px 8px}
+  .stat-num{font-size:1.4rem}
+
+  .pm-tag{font-size:.65rem;padding:3px 8px}
+  .chip{font-size:.68rem;padding:4px 9px}
+}
+
+/* Small phones */
+@media(max-width:380px){
+  header{padding:24px 14px 20px}
+  h1{font-size:1.9rem}
+  .pre-name{font-size:.6rem;letter-spacing:.16em}
+  .c-item{font-size:.72rem}
+  .summary{font-size:.78rem;padding:16px 14px}
+  .main{padding:20px 14px}
+  .sidebar{padding:20px 14px}
+  .exp-role{font-size:1rem}
+  .exp-bullets li{font-size:.75rem}
+  .stats{grid-template-columns:1fr 1fr}
+  .stat-num{font-size:1.25rem}
+  .stat-lbl{font-size:.55rem}
+  .bar-top{font-size:.68rem}
+  .s-label{font-size:.6rem}
+  .pd-item{font-size:.72rem}
+  .str-item{font-size:.72rem}
+}
+
 @media print{
   body{background:#fff}
   .page{margin:0;box-shadow:none;max-width:100%}
   .reveal{opacity:1!important;transform:none!important}
+  .body{grid-template-columns:1fr 240px}
+  header{padding:40px 40px 32px}
+  .summary,.project-banner{padding:20px 40px}
+  .main{padding:36px 36px 36px 40px}
+  .sidebar{padding:36px 24px}
 }
 </style>
 </head>
